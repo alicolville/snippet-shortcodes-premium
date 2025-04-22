@@ -29,24 +29,24 @@
 	function yk_ss_license_validate( $license ) {
 
 		if ( true === empty( $license ) ) {
-			return __( 'License missing', yk_ss_SLUG );
+			return __( 'License missing', 'snippet-shortcodes-premium' );
 		}
 
 		// Decode license
 		$license = yk_ss_license_decode( $license );
 
 		if ( true === empty( $license ) ) {
-			return __( 'Could not decode / verify license', yk_ss_SLUG );
+			return __( 'Could not decode / verify license', 'snippet-shortcodes-premium' );
 		}
 
 		// Does site hash in license meet this site's actual hash?
 		if ( true === empty( $license['site-hash'] ) ) {
-			return __( 'Invalid license hash', yk_ss_SLUG );
+			return __( 'Invalid license hash', 'snippet-shortcodes-premium' );
 		}
 
 		// Match this site hash?
 		if ( yk_ss_generate_site_hash() !== $license['site-hash']) {
-			return __( 'This license doesn\'t appear to be for this site (no match on site hash).', yk_ss_SLUG );
+			return __( 'This license doesn\'t appear to be for this site (no match on site hash).', 'snippet-shortcodes-premium' );
 		}
 
 		// Valid date?
@@ -54,7 +54,7 @@
 		$expire_time = strtotime( $license['expiry-date'] );
 
 		if ( $expire_time < $today_time ) {
-			return __( 'This license has expired.', yk_ss_SLUG );
+			return __( 'This license has expired.', 'snippet-shortcodes-premium' );
 		}
 
 		return true;

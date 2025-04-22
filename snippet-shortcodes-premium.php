@@ -38,7 +38,9 @@ define( 'YK_SS_PLUGIN_VERSION', '1.0' );
 define( 'YK_SS_PLUGIN_NAME', 'Snippet Shortcodes - Premium' );
 define( 'YK_SS_SLUG', 'snippet-shortcodes-premium' );
 
+include_once YK_SS_ABSPATH . 'includes/functions.php';
 
-// SH_CD_ABSPATH
+if ( yk_ss_is_main_plugin_enabled() ) {
 
-include_once YK_SS_ABSPATH . 'includes/shortcode.presets.premium.php';
+    include_once YK_SS_ABSPATH . 'includes/shortcode.presets.premium.php';
+}

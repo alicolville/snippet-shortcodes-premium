@@ -11,3 +11,4 @@ function yk_ss_cron_licence_check() {
 }
 add_action( 'daily', 'yk_ss_cron_licence_check' );
 add_action( 'sh-cd-upgrade', 'yk_ss_cron_licence_check' );
+add_action( 'yk-ss-upgrade', 'yk_ss_cron_licence_check' );

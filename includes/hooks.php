@@ -10,3 +10,11 @@ function yk_ss_upgrade() {
 	}
 }
 add_action('admin_init', 'yk_ss_upgrade');
+
+/**
+* Add license page to the admin menu 
+*/	
+function yk_ss_menu_add_license_page() {
+	add_submenu_page( 'sh-cd-shortcode-variables-main-menu', 'Your License',  'Your License', 'manage_options', 'sh-cd-shortcode-variables-license', 'sh_cd_advertise_pro');
+}
+add_action( 'sh-cd-admin-menu-upgrade', 'yk_ss_menu_add_license_page');	

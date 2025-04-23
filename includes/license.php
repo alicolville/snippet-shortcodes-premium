@@ -6,8 +6,15 @@
 	 * Let the main plugin know whether we have a Premium license or not
 	 */
 	add_filter( 'sh-cd-license-is-premium', function() { 
-		return (bool) get_option( 'sh-cd-license-valid', false );
+		return yk_ss_license_is_premium();
 	});
+
+	/**
+	 * do we have a valid license?
+	 */
+	function yk_ss_license_is_premium() {
+		return (bool) get_option( 'sh-cd-license-valid', false );
+	}
 
 	/**
 	 *	Check an existing license's hash is still valid
@@ -79,15 +86,15 @@
 	 * Validate and apply a license
 	 **/
 	function yk_ss_license_apply( $license ) {
-
+		
 		// Validate license
 		$license_result = yk_ss_license_validate($license);
-
+		
 		if( true === $license_result ) {
 
 			update_option( 'sh-cd-license', $license );
 			update_option( 'sh-cd-license-valid', true );
-
+			
 			return true;
 		}
 

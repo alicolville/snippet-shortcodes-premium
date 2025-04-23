@@ -44,5 +44,6 @@ if ( yk_ss_is_main_plugin_enabled() ) {
 
     include_once YK_SS_ABSPATH . 'includes/cron.php';
     include_once YK_SS_ABSPATH . 'includes/hooks.php';
+    include_once YK_SS_ABSPATH . 'includes/license.php';
     include_once YK_SS_ABSPATH . 'includes/shortcode.presets.premium.php';
 }

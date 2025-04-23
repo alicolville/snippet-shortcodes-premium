@@ -51,27 +51,11 @@
                                     </span>
                                 </h3>
                                 <div class="inside">
-                                    <center>
+                                    
                                         <h3><?php echo __( 'In case you need, your <strong>Site Hash</strong> is', SH_CD_SLUG ); ?>: <?php echo esc_html( $site_hash ) ; ?></h3>
 
-                                        <?php
-
-                                            if ( true === empty( $existing_license ) ) :
-
-                                                sh_cd_upgrade_button();
-                                        ?>
-                                                <br />  <br />
-                                                <hr />
-                                                <h3><?php echo __( 'Premium Shortcodes', SH_CD_SLUG ); ?></h3>
-                                                <p><?php echo __( 'Upgrade to the Premium version of Snippet Shortcodes and receive the following shortcodes', SH_CD_SLUG ); ?>:</p>
-
-                                                <br />
-                                        <?php
-	                                            echo sh_cd_display_premade_shortcodes( 'premium' );
-
-                                            endif;
-                                        ?>
-                                    </center>
+                                        <?php sh_cd_marketing_upgrade_page_text(); ?>
+                                    
                                 </div>
                             </div>
                         </div>

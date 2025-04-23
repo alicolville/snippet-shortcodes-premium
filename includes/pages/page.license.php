@@ -42,22 +42,57 @@
             <div id="poststuff">
                 <div id="post-body" class="metabox-holder columns-2">
                     <div id="post-body-content">
-
                         <div class="meta-box-sortables ui-sortable">
+                            <?php if ( true == sh_cd_is_premium() ) : ?>
+                                <div class="postbox">
+                                    <h3 class="postbox-header">
+                                        <span>
+                                            <?php echo __( 'Thank you for supporting this plugin', SH_CD_SLUG ); ?>
+                                        </span>
+                                    </h3>
+                                    <div class="inside">
+                                        <p><?php echo __( 'Purchasing a license for this WordPress plugin not only unlocks powerful premium features but also directly supports the ongoing development and maintenance of the tool. As an independent developer, every license sold helps cover the time, resources, and costs involved in keeping the plugin up-to-date, secure, and compatible with the latest WordPress standards. Your support ensures continued innovation, quick bug fixes, and responsive updates - ultimately making the plugin better for everyone in the community.', SH_CD_SLUG ); ?></p>                     
+                                    </div>
+                                </div>
+                            <?php else: ?>
+                                <div class="postbox">
+                                    <h3 class="postbox-header">
+                                        <span>
+                                            <?php echo __( 'Purchase a Premium license', SH_CD_SLUG ); ?>
+                                        </span>
+                                    </h3>
+                                    <div class="inside">
+                                        <p><?php echo __( 'To access the Premium features of this plugin, simply purchase a license through our website:', SH_CD_SLUG ); ?></p>                     
+                                    
+                                        <?php sh_cd_upgrade_button(); ?>    
+                                    </div>
+                                </div>
+                            <?php endif; ?>    
                             <div class="postbox">
                                 <h3 class="postbox-header">
                                     <span>
-                                        <?php echo __( 'Upgrade your license', SH_CD_SLUG ); ?>
+                                        <?php echo __( 'Your Site Hash', SH_CD_SLUG ); ?>
                                     </span>
                                 </h3>
                                 <div class="inside">
-                                    
-                                        <h3><?php echo __( 'In case you need, your <strong>Site Hash</strong> is', SH_CD_SLUG ); ?>: <?php echo esc_html( $site_hash ) ; ?></h3>
-
-                                        <?php sh_cd_marketing_upgrade_page_text(); ?>
-                                    
+                                        <p>
+                                            <?php echo __( 'When purchasing a Premium license, you’ll need your site hash to link the license to this installation.', SH_CD_SLUG ); ?>
+                                            <strong><?php echo __( 'Your Site Hash is', SH_CD_SLUG ); ?>: <?php echo esc_html( $site_hash ) ; ?></strong>
+                                        </p>                        
                                 </div>
                             </div>
+                            <?php if ( false == sh_cd_is_premium() ) : ?>
+                                <div class="postbox">
+                                    <h3 class="postbox-header">
+                                        <span>
+                                            <?php echo __( 'Why you should upgrade', SH_CD_SLUG ); ?>
+                                        </span>
+                                    </h3>
+                                    <div class="inside">
+                                        <?php sh_cd_marketing_upgrade_page_text(); ?>                          
+                                    </div>
+                                </div>
+                            <?php endif; ?>    
                         </div>
                     </div>
 
@@ -118,7 +153,7 @@
                                             <tr class="last">
                                                 <th colspan="2"><?php echo __( 'Your Existing License', SH_CD_SLUG ); ?></th>
                                             </tr>
-                                            <tr class="last">
+                                            <tr>
                                                 <td colspan="2"><textarea rows="5" style="width:100%"><?php echo esc_textarea( $existing_license ); ?></textarea></td>
                                             </tr>
                                             <tr class="last">

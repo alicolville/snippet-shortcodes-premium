@@ -37,3 +37,20 @@ define( 'YK_SS_ABSPATH', plugin_dir_path( __FILE__ ) );
 define( 'YK_SS_PLUGIN_VERSION', '1.0' );
 define( 'YK_SS_PLUGIN_NAME', 'Snippet Shortcodes - Premium' );
 define( 'YK_SS_SLUG', 'snippet-shortcodes-premium' );
+
+include_once YK_SS_ABSPATH . 'includes/functions.php';
+
+add_action( 'plugins_loaded', function() {
+
+    if ( yk_ss_is_main_plugin_enabled() ) {
+
+        include_once YK_SS_ABSPATH . 'includes/cron.php';
+        include_once YK_SS_ABSPATH . 'includes/hooks.php';
+        include_once YK_SS_ABSPATH . 'includes/license.php';
+        include_once YK_SS_ABSPATH . 'includes/shortcode.presets.premium.php';
+        include_once YK_SS_ABSPATH . 'includes/pages/page.license.php';
+        
+    }
+
+});    
+

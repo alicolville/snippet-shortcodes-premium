@@ -3,7 +3,7 @@
 defined('ABSPATH') or die("Jog on!");
 
 /**
- * Plugin Name: Snippet Shortcodes - Premium Version
+ * Plugin Name: Snippet Shortcodes - Premium features
  * Description: The Premium version of Snippet Shortcodes. This plugin is required for the Premium version to work.
  * Version: 1.0
  * Requires at least:   6.0

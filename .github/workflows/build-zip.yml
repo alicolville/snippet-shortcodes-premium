@@ -32,8 +32,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ${{ secrets.FTP_URL }}
-        username: ${{ secrets.FTP_WT_USERNAME }}
-        password: ${{ secrets.FTP_WT_PASSWORD }}
+        username: ${{ secrets.FTP_SS_USERNAME }}
+        password: ${{ secrets.FTP_SS_PASSWORD }}
         local-dir: /home/runner/work/snippet-shortcodes-premium/snippet-shortcodes-premium/snippet-shortcodes-premium/
         exclude: |
            **/.git*

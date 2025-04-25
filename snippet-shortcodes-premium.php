@@ -42,6 +42,8 @@ include_once YK_SS_ABSPATH . 'includes/functions.php';
 
 add_action( 'plugins_loaded', function() {
 
+    include_once YK_SS_ABSPATH . 'includes/standard-plugin-check.php';
+
     if ( yk_ss_is_main_plugin_enabled() ) {
 
         include_once YK_SS_ABSPATH . 'includes/cron.php';

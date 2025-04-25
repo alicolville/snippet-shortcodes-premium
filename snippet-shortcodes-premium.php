@@ -37,3 +37,4 @@ define( 'YK_SS_ABSPATH', plugin_dir_path( __FILE__ ) );
 define( 'YK_SS_PLUGIN_VERSION', '1.0' );
 define( 'YK_SS_PLUGIN_NAME', 'Snippet Shortcodes - Premium' );
 define( 'YK_SS_SLUG', 'snippet-shortcodes-premium' );
+define( 'YK_SS_YEKEN_LATEST_RELEASE_MANIFEST', 'https://raw.githubusercontent.com/alicolville/snippet-shortcodes-premium/refs/heads/master/release.json' );

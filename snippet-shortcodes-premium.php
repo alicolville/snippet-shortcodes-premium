@@ -44,7 +44,7 @@ include_once YK_SS_ABSPATH . 'includes/functions.php';
 add_action( 'plugins_loaded', function() {
 
     include_once YK_SS_ABSPATH . 'includes/standard-plugin-check.php';
-
+    
     if ( yk_ss_is_main_plugin_enabled() ) {
 
         include_once YK_SS_ABSPATH . 'includes/cron.php';
@@ -52,7 +52,15 @@ add_action( 'plugins_loaded', function() {
         include_once YK_SS_ABSPATH . 'includes/license.php';
         include_once YK_SS_ABSPATH . 'includes/shortcode.presets.premium.php';
         include_once YK_SS_ABSPATH . 'includes/pages/page.license.php';
-        
     }
 
-});    
+});   
+
+// -----------------------------------------------------------------------------------------
+// Check for auto updates
+// -----------------------------------------------------------------------------------------
+include_once YK_SS_ABSPATH . 'includes/plugin-update-checker/plugin-update-checker.php';
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$wt_plugin_updater = PucFactory::buildUpdateChecker( YK_SS_YEKEN_LATEST_RELEASE_MANIFEST, __FILE__, YK_SS_SLUG );

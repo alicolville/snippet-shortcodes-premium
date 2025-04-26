@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('WP: Plugins activated', async ({ page }) => {
+test('Plugins: activated', async ({ page }) => {
   
   await page.goto('http://localhost/wp-admin/plugins.php');
 

@@ -131,7 +131,7 @@
                                         </tr>
                                         <tr>
                                             <th><?php echo __( 'Expires', YK_SS_SLUG ); ?></th>
-                                            <td>
+                                            <td class="yk-ss-license-expiry-date">
                                                 <?php
 
                                                     if( false === empty( $license_decoded['type'] ) &&

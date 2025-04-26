@@ -111,7 +111,7 @@
                                     <form action="<?php echo admin_url( 'admin.php?page=sh-cd-shortcode-variables-upgrade&add-license=true' ); ?>"
                                           method="post">
                                         <p><?php echo __( 'Copy and paste the license given to you by YeKen into this box and click "Apply License".', YK_SS_SLUG ); ?></p>
-                                        <textarea rows="5" style="width:100%" name="license-key"></textarea>
+                                        <textarea rows="5" style="width:100%" class="license-key" name="license-key"></textarea>
                                         <br/><br/>
                                         <input type="submit" class="button-secondary large-text" value="<?php echo __( 'Apply License', YK_SS_SLUG ); ?>"/>
                                     </form>

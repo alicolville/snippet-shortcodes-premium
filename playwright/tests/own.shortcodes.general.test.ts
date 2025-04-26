@@ -7,6 +7,7 @@ test.describe( "Own Shortcode", ()=>{
   test('Doesn\'t already exist', async ({ page }) => {
     await page.goto('http://localhost/wp-admin/admin.php?page=sh-cd-shortcode-variables-your-shortcodes');
     await expect(page.locator('.yk-ss-row-playwright-full-editor-add')).toHaveCount(0); 
+    await expect(page.locator('.yk-ss-row-playwright-quick-add')).toHaveCount(0); 
   });
   
   test( 'Add shortcode via full editor', async ({ page }) => {
@@ -61,20 +62,46 @@ test.describe( "Own Shortcode", ()=>{
     await expect(page.locator('.test-1')).toContainText('Changed this via the inline editor!');
   });
   
-  test( 'Delete shortcode', async ({ page }) => {
+  test( 'Inline add', async ({ page }) => {
+  
+    await page.goto('http://localhost/wp-admin/admin.php?page=sh-cd-shortcode-variables-your-shortcodes');
+   
+    await page.locator('.button-add-inline').click();
+
+    await page.getByPlaceholder('Slug').click();
+    await page.getByPlaceholder('Slug').fill('playwright Quick Add');
+  
+    await page.locator('#sh-cd-add-inline-text').click();
+    await page.locator('#sh-cd-add-inline-text').fill('Added this via the inline editor!');
+    
+    await page.getByText('Add', { exact: true }).click();
+    
+    await page.reload();
+
+    await expect(page.locator('.yk-ss-row-playwright-quick-add .slug-link')).toContainText('[sv slug="playwright-quick-add"]');
+
+    await page.goto('http://localhost/sv-test/');
+    await expect(page.locator('.test-2')).toContainText('Added this via the inline editor!');
+  });
+
+  test( 'Delete shortcodes', async ({ page }) => {
   
     await page.goto('http://localhost/wp-admin/admin.php?page=sh-cd-shortcode-variables-your-shortcodes');
    
     page.on('dialog', dialog => dialog.accept());
   
     await page.locator('.yk-ss-row-playwright-full-editor-add .delete-shortcode').click();
+    await page.locator('.yk-ss-row-playwright-quick-add .delete-shortcode').click();
     
-    await expect(page.locator('.yk-ss-row-playwright-full-editor-add')).toHaveCount(0); 
+    await page.reload();
+    
+    await expect(page.locator('.yk-ss-row-playwright-full-editor-add')).toHaveCount(0);
+    await expect(page.locator('.yk-ss-row-playwright-quick-add')).toHaveCount(0); 
   
     await page.goto('http://localhost/sv-test/');
   
     await expect(page.locator('.test-1')).toContainText('');
-  
+    await expect(page.locator('.test-2')).toContainText('');
   });
-  
+
 });

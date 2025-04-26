@@ -5,7 +5,7 @@ defined('ABSPATH') or die("Jog on!");
 /**
  * Plugin Name: Snippet Shortcodes - Premium features
  * Description: The Premium version of Snippet Shortcodes. This plugin is required for the Premium version to work.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Requires at least:   6.0
  * Tested up to: 		6.8
  * Requires PHP:        7.4
@@ -34,7 +34,7 @@ defined('ABSPATH') or die("Jog on!");
 
 define( 'YK_SS_ABSPATH', plugin_dir_path( __FILE__ ) );
 
-define( 'YK_SS_PLUGIN_VERSION', '1.0.1' );
+define( 'YK_SS_PLUGIN_VERSION', '1.0.3' );
 define( 'YK_SS_PLUGIN_NAME', 'Snippet Shortcodes - Premium' );
 define( 'YK_SS_SLUG', 'snippet-shortcodes-premium' );
 define( 'YK_SS_YEKEN_LATEST_RELEASE_MANIFEST', 'https://raw.githubusercontent.com/alicolville/snippet-shortcodes-premium/refs/heads/master/release.json' );

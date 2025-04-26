@@ -3,3 +3,4 @@ Page name: sv-tests
 Content:
 
 <p class="test-1">[sv slug="playwright-full-editor-add"]</p>
+<p class="test-2">[sv slug="playwright-quick-add"]</p>

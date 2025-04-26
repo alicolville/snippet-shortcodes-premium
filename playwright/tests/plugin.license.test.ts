@@ -24,18 +24,3 @@ test('Plugin: Remove and add licence', async ({ page }) => {
   await expect(page.locator('.yk-ss-existing-license')).toBeVisible();
 
 });
-
-//yk-ss-existing-license
-
-// test('Admin Notices: Prompt to install core plugin if not activated', async ({ page }) => {
-  
-//   await page.goto('http://localhost/wp-admin/plugins.php');
-
-//   await page.getByLabel('Deactivate Snippet Shortcodes', { exact: true } ).click();
- 
-//   await expect(page.locator('.yk-ss-notice-missing-core-plugin')).toBeVisible();
-
-//   await page.getByLabel('Activate Snippet Shortcodes', { exact: true }).click();
-
-//   await expect(page.locator('.yk-ss-notice-missing-core-plugin')).toHaveCount(0);
-//});

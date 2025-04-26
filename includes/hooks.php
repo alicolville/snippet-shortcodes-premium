@@ -16,7 +16,7 @@ add_action('admin_init', 'yk_ss_upgrade');
 */	
 function yk_ss_menu_add_license_page() {
 
-	$text = ( false === sh_cd_is_premium() ) ? __( 'Upgrade to Premium', SH_CD_SLUG ) : __( 'Your License', SH_CD_SLUG );
+	$text = ( false === sh_cd_is_premium() ) ? __( 'Upgrade to Premium', YK_SS_SLUG ) : __( 'Your License', YK_SS_SLUG );
 
 	add_submenu_page( 'sh-cd-shortcode-variables-main-menu', $text, $text, 'manage_options', 'sh-cd-shortcode-variables-upgrade', 'sh_cd_advertise_pro');
 }

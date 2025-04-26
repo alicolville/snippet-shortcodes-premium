@@ -11,7 +11,7 @@ function yk_ss_prompt_to_install_standard_plugin() {
 		return;
 	}
 
-	printf('<div class="notice notice-error">
+	printf('<div class="notice notice-error yk-ss-notice-missing-core-plugin">
 				<p><strong>%1$s</strong>: %2$s</p>
 			</div>',
 			esc_html( YK_SS_PLUGIN_NAME ),

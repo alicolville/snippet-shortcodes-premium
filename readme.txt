@@ -3,7 +3,7 @@ Contributors: aliakro
 Tags: custom,shortcode,snippet,variable,library
 Requires at least: 6.0
 Tested up to: 6.8
-Stable tag: 1.0
+Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -21,6 +21,8 @@ If you have a question or an issue, please ask on the plugin's [WordPress suppor
 
 == Useful links ==
 
+* [Snippet Shortcodes - Premium](https://snippetshortcodes.yeken.uk/) – main website for the Premium plugin.
+* [Snippet Shortcodes - Core](https://wordpress.org/plugins/shortcode-variables/) – WordPress.org page for the core plugin.
 * [Technical Documentation](https://snippet-shortcodes.yeken.uk/) – Installation and detailed documentation on how to use the plugin.
 * [Trial license](https://shop.yeken.uk/get-a-trial-license/) – Get a trial license to try out all the features.
 * [Upgrade](https://shop.yeken.uk/product/shortcode-variables/) – purchase a license to receive all of the features.
@@ -30,6 +32,10 @@ If you have a question or an issue, please ask on the plugin's [WordPress suppor
 1.0 - All Snippet Shortcodes Premium features have now been moved into this plugin.
 
 == Changelog ==
+
+= 1.0.1 =
+
+* Improvement: Added auto updater - so updates can automatically be served from snippetshortcodes.yeken.uk
 
 = 1.0 =
 

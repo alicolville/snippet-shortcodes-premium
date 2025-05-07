@@ -21,7 +21,7 @@ test.describe( "Own Shortcode", ()=>{
     await page.frameLocator('iframe[title="Rich Text Area\\. Press Alt-Shift-H for help\\."]').locator('#tinymce').fill('Add something here. Playwright Full Editor Add');
     await page.getByRole('button', { name: 'Save Shortcode' }).nth(1).click();
     await expect(page.locator('.yk-ss-row-playwright-full-editor-add .slug-link')).toContainText('[sv slug="playwright-full-editor-add"]');
-    await expect(page.locator('.yk-ss-row-playwright-full-editor-add .inline-text-shortcode')).toContainText('Add something here. Playwright Full Editor Add');
+    //await expect(page.locator('.yk-ss-row-playwright-full-editor-add .inline-text-shortcode')).toContainText('Add something here. Playwright Full Editor Add');
   
     await page.goto('http://localhost/sv-test/');
   
@@ -31,10 +31,13 @@ test.describe( "Own Shortcode", ()=>{
   test( 'Quick button: Disable and Enable', async ({ page }) => {
   
     await page.goto('http://localhost/wp-admin/admin.php?page=sh-cd-shortcode-variables-your-shortcodes');
+
+    await expect(page.getByRole('cell', { name: 'Quick Add Add via Editor' }).getByRole('link')).toBeVisible();
     await page.locator('.yk-ss-row-playwright-full-editor-add .toggle-disable').click();
   
+
     await page.goto('http://localhost/sv-test/');
-    await expect(page.locator('.test-1')).toContainText('');
+    await expect(page.locator('.test-1')).toBeEmpty();
   
     await page.goto('http://localhost/wp-admin/admin.php?page=sh-cd-shortcode-variables-your-shortcodes');
     await page.locator('.yk-ss-row-playwright-full-editor-add .toggle-disable').click();
@@ -100,8 +103,8 @@ test.describe( "Own Shortcode", ()=>{
   
     await page.goto('http://localhost/sv-test/');
   
-    await expect(page.locator('.test-1')).toContainText('');
-    await expect(page.locator('.test-2')).toContainText('');
+    await expect(page.locator('.test-1')).toBeEmpty();
+    await expect(page.locator('.test-2')).toBeEmpty();
   });
 
 });

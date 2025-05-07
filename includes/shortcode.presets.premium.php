@@ -31,6 +31,10 @@ class SV_SC_SERVER_INFO extends SV_Preset {
 
 		$args = $this->get_arguments();
 
+		if ( true === empty( $args['field'] ) ) {
+			return '"field" attribute has is missing.';
+		}
+
 		return ( false === empty( $_SERVER[ $args['field'] ] ) ) ? $_SERVER[ $args['field'] ] : '';
 	}
 }

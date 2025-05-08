@@ -113,7 +113,7 @@
                                         <p><?php echo __( 'Copy and paste the license given to you by YeKen into this box and click "Apply License".', YK_SS_SLUG ); ?></p>
                                         <textarea rows="5" style="width:100%" class="license-key" name="license-key"></textarea>
                                         <br/><br/>
-                                        <input type="submit" class="button-secondary large-text" value="<?php echo __( 'Apply License', YK_SS_SLUG ); ?>"/>
+                                        <input type="submit" class="button-secondary sh-cd-button large-text" value="<?php echo __( 'Apply License', YK_SS_SLUG ); ?>"/>
                                     </form>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
                                                 <td colspan="2"><textarea rows="5" style="width:100%" class="yk-ss-existing-license"><?php echo esc_textarea( $existing_license ); ?></textarea></td>
                                             </tr>
                                             <tr class="last">
-                                                <td colspan="2"><a href="<?php echo admin_url('admin.php?page=sh-cd-shortcode-variables-upgrade&remove-license=true'); ?>" class="button-secondary delete-license"><?php echo __( 'Remove License', YK_SS_SLUG ); ?></a></td>
+                                                <td colspan="2"><a href="<?php echo admin_url('admin.php?page=sh-cd-shortcode-variables-upgrade&remove-license=true'); ?>" class="button-secondary delete-license sh-cd-button"><?php echo __( 'Remove License', YK_SS_SLUG ); ?></a></td>
                                             </tr>
 
                                         <?php endif; ?>

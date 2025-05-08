@@ -14,7 +14,8 @@ test.describe( "Own Shortcode", ()=>{
   
     await page.goto('http://localhost/wp-admin/admin.php?page=sh-cd-shortcode-variables-your-shortcodes');
    
-    await page.getByRole('cell', { name: 'Quick Add Add via Editor' }).getByRole('link').click();
+    await page.locator('.yk-ss-button-add-full-editor').click();
+    
     await page.getByPlaceholder('Slug').click();
     await page.getByPlaceholder('Slug').fill('Playwright Full-edItor-add');
     await page.frameLocator('iframe[title="Rich Text Area\\. Press Alt-Shift-H for help\\."]').locator('html').click();
